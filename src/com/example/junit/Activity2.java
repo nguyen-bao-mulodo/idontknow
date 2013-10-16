@@ -16,6 +16,7 @@ public class Activity2 extends Activity {
 		setContentView(R.layout.lips);
 		LinearLayout view = (LinearLayout)findViewById(R.id.lips);
 		ActivityEffect.Bounce(this, view);
+		//notice
 	}	
 	public void onReceive(Context context, Intent intent) {
 	      Toast.makeText(context, "Intent Detected.", Toast.LENGTH_LONG).show();
