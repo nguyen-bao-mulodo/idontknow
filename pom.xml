@@ -13,4 +13,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+<!-- 	<modules>
+		<module>junit</module>
+		<module>unittest-test</module>
+	</modules> -->
 </project>
