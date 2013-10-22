@@ -104,11 +104,11 @@ language: java
 jdk: oraclejdk7
 env:
  matrix:
-   # android-16 is always included
+   android-16 is always included
    - ANDROID_SDKS=sysimg-16           ANDROID_TARGET=android-16  ANDROID_ABI=armeabi-v7a
    - ANDROID_SDKS=android-17,sysimg-17 ANDROID_TARGET=android-17  ANDROID_ABI=armeabi-v7a
 before_install:
-  # Install base Android SDK
+   Install base Android SDK
   - sudo apt-get update -qq
   - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch > /dev/null; fi
   - wget http://dl.google.com/android/android-sdk_r21.1-linux.tgz
@@ -116,11 +116,11 @@ before_install:
   - export ANDROID_HOME=$PWD/android-sdk-linux
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
-  # Install required components.
-  # For a full list, run `android list sdk -a --extended`
-  # Note that sysimg-16 downloads the ARM, x86 and MIPS images (we should optimize this).
-  # Other relevant API's:
-  #  addon-google_apis-google-16
+   Install required components.
+   For a full list, run `android list sdk -a --extended`
+   Note that sysimg-16 downloads the ARM, x86 and MIPS images (we should optimize this).
+   Other relevant API's:
+   addon-google_apis-google-16
   - android update sdk --filter platform-tools,android-16,extra-android-support,66,$ANDROID_SDKS --no-ui --force > /dev/null
 
    Create and start emulator
