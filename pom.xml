@@ -47,4 +47,7 @@
    </plugin>
   </plugins>
  </build>
+   <modules>
+    <module>com.example.junit</module>
+  </modules>
 </project>
