@@ -4,7 +4,7 @@ Basically, you need to do 3 things:
 Change the structure of your Android Project.
 The building tools (Maven, Android Maven Plugin, Android SDK).
 Configure a 'travis.yml' file to make it work on Travis CI.
-Step 1: Application structure
+#Step 1: Application structure
 You have to change the directory structure of your Android application to comply with the structure shown below.
 
  Project-parent-folder:
@@ -19,7 +19,7 @@ NOTES:
 
 We assume you are using the Eclipse IDE.
 If you already have the project in your Eclipse Workspace, you will need to delete it from your workspace and re-import it again (after you change the structure).
-Step 2: MAVEN
+#Step 2: MAVEN
 Download Maven and extract the distribution archive to the directory in which you want to install Maven (e.g. apache-maven-3.0.5-bin.tar.gz).
 
 Supossing you extracted the archive on your $HOME directory, then run on your terminal:
@@ -31,7 +31,7 @@ source ~/.bashrc
 To verify that it is correctly installed:
 
 mvn --version
-Step 3: Eclipse Maven Android Plugin
+#Step 3: Eclipse Maven Android Plugin
 You have to install a plugin to make the Android project work with Maven within Eclipse.
 
 In Eclipse, go to:
@@ -45,7 +45,7 @@ Once in Eclipse MarketPlace:
 
 Search for: android m2e
 Install Android Configurator for M2E
-Step 4: Eclipse Maven Android Project
+#Step 4: Eclipse Maven Android Project
 To make Eclipse detect the project dependencies, you have to convert the Android and dependent Android Library projects to Maven:
 
 Right click on each project:
@@ -61,7 +61,7 @@ POM file for the Project parent folder
 POM file for the Application folder
 POM file for the Tests project folder
 POM file for an Android library project
-Step 5: Install Maven Android SDK Deployer
+#Step 5: Install Maven Android SDK Deployer
 If you want to avoid the pain of configuring the Android SDKs in your local Maven repositories, this tool is a must.
 
 Once you run this on your terminal, you will have all the Android SDK available as Maven dependencies.
@@ -69,7 +69,7 @@ Once you run this on your terminal, you will have all the Android SDK available 
 git clone https://github.com/mosabua/maven-android-sdk-deployer.git
 cd android-sdk-deployer
 mvn install
-Step 6: Install External Android Library Projects
+#Step 6: Install External Android Library Projects
 If you are using any Android library project, you have to perform some additional steps:
 
 Compress the "library" folder of each library project and change the extension of the file to '.apklib'
@@ -83,12 +83,12 @@ mvn install:install-file \
 -DartifactId=your-library-artifact-id \
 -Dversion=1 \
 -Dpackaging=apklib
-Step 7: Installing and deploying the application
+#Step 7: Installing and deploying the application
 These commands are for building the application and deploying to a device.
 
 mvn clean install
 mvn android:deploy
-Step 8: Running Tests
+#Step 8: Running Tests
 On the Emulator:
 
 mvn clean install -Pintegration-tests -Dandroid.device=your_emulator_name
@@ -123,7 +123,7 @@ before_install:
   #  addon-google_apis-google-16
   - android update sdk --filter platform-tools,android-16,extra-android-support,66,$ANDROID_SDKS --no-ui --force > /dev/null
 
-  # Create and start emulator
+   Create and start emulator
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-skin -no-audio -no-window &
 
@@ -134,7 +134,7 @@ before_script:
 script: mvn install -Pintegration-tests -Dandroid.device=test
 Also, note that we use the 'wait-for-emulator' script:
 
-#!/bin/bash
+!/bin/bash
 
 bootanim=""
 failcounter=0
