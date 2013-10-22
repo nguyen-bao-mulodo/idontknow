@@ -10,8 +10,8 @@
 	<url>http://maven.apache.org</url>
         
         <parent>
-		<artifactId></artifactId>
-		<groupId>com.example.junit</groupId>
+		<artifactId>junit</artifactId>
+		<groupId>com.example</groupId>
 		<version>1.0</version>
 	</parent>
 	
