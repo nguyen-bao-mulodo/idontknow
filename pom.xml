@@ -48,6 +48,6 @@
   </plugins>
  </build>
    <modules>
-    <module>com.example.junit</module>
+    <module>src/com/example/junit</module>
   </modules>
 </project>
